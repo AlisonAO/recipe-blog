@@ -1,8 +1,15 @@
-<h1>Posts#show</h1>
+<h1>Got a Sweet Tooth?</h1>
+<%= link_to "Back", posts_path %> |
 <p>Find me in app/views/posts/show.html.erb</p>
 
 <%= render @post %>
 <%= image_tag(@post.image) %>
 <p><%= @post.body %></p>
 
+<hr>
+<%= link_to "New Comment", new_post_comment_path(@post) %>
+<h3>Comments</h3> 
+
+
 <%= render @post.comments %>
+

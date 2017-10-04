@@ -1,10 +1,13 @@
-<h2><%= comment.username %></h2>
-<h4>By: <%= comment.location %></h4>
-<p><em>Category: <%= comment.rating %></em></p>
-<h4>By: <%= comment.body %></h4>
+
+<p><em><%= comment.rating %> Stars</em></p>
+<p><%= comment.username %></p>
+<h4><%= comment.location %></h4>
+
+<p><%= comment.body %></p>
 
 
-<%= link_to "Show Page", post_comment_path(@post, comment) if action_name == "index" %> |
-<%= link_to "Edit Page", edit_post_comment_path(@post, comment) %>
+<%= link_to "Show Comment", post_comment_path(@post, comment) if action_name == "index" %> |
+<%= link_to "Edit Comment", edit_post_comment_path(@post, comment) %> |
+<%= link_to "Delete Comment", post_comment_path(@post, comment), method: :delete, data: { confirm: "Are you sure?" } %>
 
 <br>

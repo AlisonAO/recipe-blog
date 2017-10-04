@@ -13,10 +13,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    new_post = Post.create(post_params)
-    new_post.save
-
-    redirect_to new_post
+    @post = Post.create(post_params)
+    if  @post.save
+      redirect_to @post
+    else
+      render :new
+    end
   end
 
   def edit
@@ -24,10 +26,12 @@ class PostsController < ApplicationController
   end
 
   def update
-    post = Post.find(params[:id])
-    post.update(post_params)
-
-    redirect_to post
+      @post = Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to @post
+    else
+      render :edit
+    end
   end
 
   def destroy
