@@ -6,7 +6,7 @@
 <p><%= comment.body %></p>
 
 
-<%= link_to "Show Comment", post_comment_path(@post, comment) if action_name == "index" %> |
+<%= link_to "Show Comment", post_comment_path(@post, comment) if action_name == "index" %> 
 <%= link_to "Edit Comment", edit_post_comment_path(@post, comment) %> |
 <%= link_to "Delete Comment", post_comment_path(@post, comment), method: :delete, data: { confirm: "Are you sure?" } %>
 

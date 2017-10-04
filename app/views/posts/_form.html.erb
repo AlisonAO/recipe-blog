@@ -1,6 +1,6 @@
 
 <% if @post.errors.any? %>
-  <h3><%= pluralize(@post.errors.count, "error") %> stopped your soufle from rising!:</h3>
+  <h3><%= pluralize(@post.errors.count, "error") %> stopped your soufle from rising!</h3>
 
   <ul>
     <% @post.errors.full_messages.each do |msg| %>
@@ -35,4 +35,5 @@
 
 <br>
 
-<%= link_to "Home", root_path %>
+<%= link_to "Home", root_path if action_name == "index"%>
+<%= link_to "Back", @post unless action_name == "index" %>
