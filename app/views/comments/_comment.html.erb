@@ -1,0 +1,10 @@
+<h2><%= comment.username %></h2>
+<h4>By: <%= comment.location %></h4>
+<p><em>Category: <%= comment.rating %></em></p>
+<h4>By: <%= comment.body %></h4>
+
+
+<%= link_to "Show Page", post_comment_path(@post, comment) if action_name == "index" %> |
+<%= link_to "Edit Page", edit_post_comment_path(@post, comment) %>
+
+<br>

@@ -1,0 +1,10 @@
+<h2><%= post.title %></h2>
+<h4>By: <%= post.author %></h4>
+<p><em>Category: <%= post.theme %></em></p>
+
+
+
+<%= link_to "Show Page", post if action_name == "index" %> |
+<%= link_to "Edit Page", edit_post_path(post) %>
+
+<br>
