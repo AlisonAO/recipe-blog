@@ -1,17 +1,19 @@
-<h1>Got a Sweet Tooth?</h1>
-<%= link_to "Back", posts_path %> 
-<p>Find me in app/views/posts/show.html.erb</p>
+<div id="layout">
+	<h1>Hack Sweets</h1>
+	<%= link_to "Back", posts_path %> 
+	<p>Find me in app/views/posts/show.html.erb</p>
 
-<%= link_to "Edit Post", edit_post_path(@post) %>
+	<p><%= link_to "Edit Post", edit_post_path(@post) %></p>
 
-<%= render @post %>
-<%= image_tag(@post.image) %>
-<p><%= @post.body %></p>
+	<%= render @post %>
+	<span><%= image_tag(@post.image) %><span>
+	<p><%= @post.body %></p>
 
-<hr>
-<%= link_to "New Comment", new_post_comment_path(@post) %>
-<h3>Comments</h3> 
+	<hr>
+	<%= link_to "New Comment", new_post_comment_path(@post) %>
+	<h3>Comments</h3> 
 
 
-<%= render @post.comments %>
+	<%= render @post.comments %>
+</div>
 
